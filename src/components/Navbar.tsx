@@ -18,12 +18,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-background border-b border-b-[#1C1F26]">
+    <nav className="bg-background/20 sticky top-0 border-b border-b-[#1C1F26] backdrop-blur-2xl">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
-        <div className="flex items-center gap-2.5">
+        <Link href={"/"} className="flex items-center gap-2.5">
           <Image src={"/assets/logo.png"} width={28} height={28} alt="Logo" />
           <span className="font-oswald text-lg font-black">FITLOG</span>
-        </div>
+        </Link>
 
         <ul className="flex gap-1">
           {navLinks.map((link) => (
