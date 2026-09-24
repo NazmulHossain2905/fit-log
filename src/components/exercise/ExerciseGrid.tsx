@@ -1,6 +1,6 @@
-import GymCard from "./GymCard";
+import ExerciseCard from "./ExerciseCard";
 
-export default function GymLibraries() {
+export default function ExerciseGrid() {
   return (
     <section className="container mx-auto mt-16 space-y-8 px-6">
       <div className="space-y-1">
@@ -16,7 +16,7 @@ export default function GymLibraries() {
         {Array.from({ length: 12 })
           .fill(null)
           .map((_, i) => (
-            <GymCard key={i} />
+            <ExerciseCard key={i} />
           ))}
       </div>
     </section>

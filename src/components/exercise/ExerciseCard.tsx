@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaFire, FaRegStar } from "react-icons/fa";
 import { MdOutlineAccessTime } from "react-icons/md";
 
-export default function GymCard() {
+export default function ExerciseCard() {
   return (
     <div className="group hover:border-primary/40 w-fit cursor-pointer overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] transition-colors">
       <div className="h-48 overflow-hidden">

@@ -1,11 +1,11 @@
-import GymLibraries from "@/components/home/GymLibraries";
-import Hero from "@/components/home/Hero";
+import ExerciseGrid from "@/components/exercise/ExerciseGrid";
+import Hero from "@/components/exercise/Hero";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <GymLibraries />
+      <ExerciseGrid />
     </>
   );
 }
