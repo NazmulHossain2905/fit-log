@@ -103,7 +103,7 @@ export default function ExerciseDetailsPage() {
           </ol>
         </div>
 
-        <div className="mt-9 space-x-4">
+        <div className="mt-9 space-y-4 space-x-4">
           <button className="bg-primary inline-flex cursor-pointer items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105">
             <LuCalendarPlus2 /> <span>Add to today&apos;s plan</span>
           </button>
