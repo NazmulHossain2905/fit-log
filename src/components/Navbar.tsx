@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-background/20 sticky top-0 border-b border-b-[#1C1F26] backdrop-blur-2xl">
+    <nav className="bg-background/70 sticky top-0 z-10 border-b border-b-[#1C1F26] backdrop-blur-2xl">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link href={"/"} className="flex items-center gap-2.5">
           <Image src={"/assets/logo.png"} width={28} height={28} alt="Logo" />
@@ -30,7 +30,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`rounded-full ${pathname === link.href ? "bg-[#1A2312] font-semibold text-[#C2F800]" : "font-medium text-[#9CA3AF]"} px-4 py-1.5 text-xs`}
+                className={`rounded-full ${pathname === link.href ? "text-primary bg-[#1A2312] font-semibold" : "font-medium text-[#9CA3AF]"} px-4 py-1.5 text-xs`}
               >
                 {link.label}
               </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex gap-6">
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium text-[#D1D5DB]">Plan</span>
-            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#C2F800] px-1.25 text-xs font-bold text-black">
+            <span className="bg-primary flex h-5 min-w-5 items-center justify-center rounded-full px-1.25 text-xs font-bold text-black">
               0
             </span>
           </div>
