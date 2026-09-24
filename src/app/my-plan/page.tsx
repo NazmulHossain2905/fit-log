@@ -8,14 +8,12 @@ import SelectDropdown from "@/components/SelectDropdown";
 import { useExercise } from "@/hooks/useExercise";
 import { useState } from "react";
 
-export type TabType = "Today’s Plan" | "Saved";
 export type SortType = "duration" | "rating" | "calories";
 
 export default function MyPlanPage() {
-  const [tab, setTab] = useState<TabType>("Today’s Plan");
   const [sort, setSort] = useState<SortType>("duration");
 
-  const { todaysPlans, savedPlans } = useExercise();
+  const { todaysPlans, savedPlans, tab, setTab } = useExercise();
 
   const plan = tab === "Today’s Plan" ? todaysPlans : savedPlans;
   return (
@@ -50,7 +48,7 @@ export default function MyPlanPage() {
               { value: "rating", label: "Rating" },
               { value: "calories", label: "Calories" },
             ]}
-            value="rating"
+            value={sort}
             onSelect={(value) => setSort(value as SortType)}
           />
         </div>

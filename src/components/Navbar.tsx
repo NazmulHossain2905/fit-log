@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { savedPlans, todaysPlans } = useExercise();
+  const { savedPlans, todaysPlans, setTab } = useExercise();
 
   return (
     <nav className="bg-background/70 sticky top-0 z-10 border-b border-b-[#1C1F26] backdrop-blur-2xl">
@@ -41,7 +41,11 @@ export default function Navbar() {
         </ul>
 
         <div className="flex gap-6">
-          <Link href={"/my-plan"} className="group flex items-center gap-2">
+          <Link
+            href={"/my-plan"}
+            onClick={() => setTab("Today’s Plan")}
+            className="group flex items-center gap-2"
+          >
             <span className="group-hover:text-primary text-xs font-medium text-[#D1D5DB] transition-colors">
               Plan
             </span>
@@ -50,7 +54,11 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <Link href={"/my-plan"} className="group flex items-center gap-2">
+          <Link
+            onClick={() => setTab("Saved")}
+            href={"/my-plan"}
+            className="group flex items-center gap-2"
+          >
             <span className="group-hover:text-primary text-xs font-medium text-[#9CA3AF] transition-colors">
               Saved
             </span>

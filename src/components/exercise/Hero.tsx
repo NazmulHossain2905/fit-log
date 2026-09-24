@@ -16,9 +16,12 @@ export default function Hero() {
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
 
-          <button className="bg-primary mt-2 cursor-pointer rounded-md px-6 py-3 text-xs font-bold tracking-[0.3px] text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105">
+          <a
+            href="#workouts"
+            className="bg-primary mt-2 cursor-pointer rounded-md px-6 py-3 text-xs font-bold tracking-[0.3px] text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105"
+          >
             BROWSE WORKOUTS
-          </button>
+          </a>
         </div>
 
         <div>

@@ -27,7 +27,7 @@ export default async function ExerciseGrid() {
   const exercises = await getExercise();
 
   return (
-    <section className="mx-auto mt-16 max-w-7xl space-y-8 px-6">
+    <section id="workouts" className="mx-auto mt-16 max-w-7xl space-y-8 px-6">
       <div className="space-y-1">
         <h2 className="font-oswald text-3xl font-bold tracking-[-0.75px]">
           THE LIBRARY
