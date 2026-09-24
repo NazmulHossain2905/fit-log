@@ -4,7 +4,11 @@ import { FaFire, FaRegStar, FaCheck } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { MdOutlineAccessTime } from "react-icons/md";
 
-export default function PlanCard() {
+interface PlanCardProps {
+  forSaved?: boolean;
+}
+
+export default function PlanCard({ forSaved }: PlanCardProps) {
   return (
     <div className="flex flex-col items-start gap-4 rounded-2xl border border-[#232732] bg-[#14171E] p-2 md:flex-row md:items-center md:p-4">
       <div className="h-36 w-full overflow-hidden rounded-xl md:h-20 md:w-36">
@@ -44,9 +48,11 @@ export default function PlanCard() {
         >
           View Details
         </Link>
-        <button className="bg-primary inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4.5 py-2 text-xs font-semibold text-black transition-transform hover:scale-105">
-          <FaCheck /> <span>Mark as Done</span>
-        </button>
+        {!forSaved && (
+          <button className="bg-primary inline-flex cursor-pointer items-center gap-1.5 rounded-full px-4.5 py-2 text-xs font-semibold text-black transition-transform hover:scale-105">
+            <FaCheck /> <span>Mark as Done</span>
+          </button>
+        )}
 
         <button className="cursor-pointer rounded-full border border-transparent px-1.5 py-1.5 text-xl text-[#6B7280] transition-transform duration-300 hover:rotate-90 hover:border-[#374151] hover:text-red-500">
           <IoClose />
