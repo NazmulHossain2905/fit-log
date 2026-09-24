@@ -2,7 +2,7 @@ import ExerciseCard from "./ExerciseCard";
 
 export default function ExerciseGrid() {
   return (
-    <section className="container mx-auto mt-16 space-y-8 px-6">
+    <section className="mx-auto mt-16 max-w-7xl space-y-8 px-6">
       <div className="space-y-1">
         <h2 className="font-oswald text-3xl font-bold tracking-[-0.75px]">
           THE LIBRARY
@@ -12,7 +12,7 @@ export default function ExerciseGrid() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 12 })
           .fill(null)
           .map((_, i) => (

@@ -4,10 +4,10 @@ import { LuCalendarPlus2 } from "react-icons/lu";
 
 export default function ExerciseDetailsPage() {
   return (
-    <section className="container mx-auto flex gap-14 px-6 py-12">
-      <div className="group h-183.75 w-147 overflow-hidden rounded-2xl border border-[#232834] bg-[#171A21]">
+    <section className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-7 md:gap-14 md:py-12 lg:flex-row">
+      <div className="group h-100 w-full overflow-hidden rounded-2xl border border-[#232834] bg-[#171A21] md:h-120 lg:h-183.75 lg:w-147">
         <Image
-          className="h-full object-cover object-center transition-transform group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
           src={"/assets/Overhead-Press.png"}
           width={588}
           height={735}
@@ -93,7 +93,7 @@ export default function ExerciseDetailsPage() {
 
           <ol className="list-inside list-decimal space-y-3 text-sm text-[#D1D5DB]">
             <li>Lie on the bench with eyes under the bar and feet planted.</li>
-            <li>Unrack with locked elbows and lower the bar to mid-chest.</li>
+            <li>Untrack with locked elbows and lower the bar to mid-chest.</li>
             <li>
               Press up in a slight arc until elbows lock without bouncing.
             </li>
@@ -104,10 +104,10 @@ export default function ExerciseDetailsPage() {
         </div>
 
         <div className="mt-9 space-y-4 space-x-4">
-          <button className="bg-primary inline-flex cursor-pointer items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105">
+          <button className="bg-primary inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105 md:w-auto">
             <LuCalendarPlus2 /> <span>Add to today&apos;s plan</span>
           </button>
-          <button className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-[#374151] px-6 py-3 text-sm font-semibold text-[#E5E7EB] transition-transform hover:scale-105">
+          <button className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-[#374151] px-6 py-3 text-sm font-semibold text-[#E5E7EB] transition-transform hover:scale-105 md:w-auto">
             <FaRegBookmark /> <span>Save for later</span>
           </button>
         </div>

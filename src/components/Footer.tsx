@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-background mt-16 border-t border-t-[#1a1d24]">
-      <div className="container mx-auto flex items-center justify-between px-6 py-10">
+    <footer className="bg-background mt-10 border-t border-t-[#1a1d24] md:mt-16">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 md:flex-row md:py-10">
         <Link href={"/"} className="flex items-center gap-2.5">
           <Image
             src={"/assets/logo-footer.svg"}

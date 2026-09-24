@@ -6,10 +6,10 @@ import { MdOutlineAccessTime } from "react-icons/md";
 
 export default function PlanCard() {
   return (
-    <div className="flex items-center gap-4 rounded-2xl border border-[#232732] bg-[#14171E] p-4">
-      <div className="h-20 w-36 overflow-hidden rounded-xl">
+    <div className="flex flex-col items-start gap-4 rounded-2xl border border-[#232732] bg-[#14171E] p-2 md:flex-row md:items-center md:p-4">
+      <div className="h-36 w-full overflow-hidden rounded-xl md:h-20 md:w-36">
         <Image
-          className="h-full object-cover object-center"
+          className="h-full w-full object-cover object-center"
           src={"/assets/Overhead-Press.png"}
           width={144}
           height={80}

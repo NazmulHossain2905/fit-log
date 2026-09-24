@@ -4,13 +4,14 @@ import { MdOutlineAccessTime } from "react-icons/md";
 
 export default function ExerciseCard() {
   return (
-    <div className="group hover:border-primary/40 w-fit cursor-pointer overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] transition-colors">
-      <div className="h-48 overflow-hidden">
+    <div className="group hover:border-primary/40 cursor-pointer overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] transition-colors">
+      <div className="h-48 overflow-hidden bg-gray-500/10">
         <Image
-          className="h-full object-cover object-center transition-transform group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform group-hover:scale-105 md:w-auto"
           src={"/assets/Overhead-Press.png"}
           width={392}
           height={192}
+          loading="eager"
           alt="Barbell Bench Press"
         />
       </div>
