@@ -1,10 +1,11 @@
 "use client";
 
-import Dashboard from "@/components/my-plan/Dashboard";
+import ExercisesStats from "@/components/my-plan/ExercisesStats";
 import SavedPlans from "@/components/my-plan/SavedPlans";
 import TabSegment from "@/components/my-plan/TabSegment";
 import TodaysPlans from "@/components/my-plan/TodaysPlans";
 import SelectDropdown from "@/components/SelectDropdown";
+import { useExercise } from "@/hooks/useExercise";
 import { useState } from "react";
 
 export type TabType = "Today’s Plan" | "Saved";
@@ -14,6 +15,9 @@ export default function MyPlanPage() {
   const [tab, setTab] = useState<TabType>("Today’s Plan");
   const [sort, setSort] = useState<SortType>("duration");
 
+  const { todaysPlans, savedPlans } = useExercise();
+
+  const plan = tab === "Today’s Plan" ? todaysPlans : savedPlans;
   return (
     <section className="mx-auto max-w-7xl space-y-6 px-6 py-7 md:pt-10">
       <div className="space-y-2">
@@ -25,8 +29,8 @@ export default function MyPlanPage() {
         </p>
       </div>
 
-      {/* Dashboard */}
-      <Dashboard />
+      {/* ExercisesStats */}
+      <ExercisesStats plans={plan} />
 
       <div className="flex flex-col items-center justify-between gap-2 pt-2 md:flex-row">
         <TabSegment
@@ -52,7 +56,11 @@ export default function MyPlanPage() {
         </div>
       </div>
 
-      {tab === "Today’s Plan" ? <TodaysPlans /> : <SavedPlans />}
+      {tab === "Today’s Plan" ? (
+        <TodaysPlans sort={sort} />
+      ) : (
+        <SavedPlans sort={sort} />
+      )}
     </section>
   );
 }

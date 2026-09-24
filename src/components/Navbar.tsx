@@ -1,5 +1,6 @@
 "use client";
 
+import { useExercise } from "@/hooks/useExercise";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +17,7 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { savedPlans, todaysPlans } = useExercise();
 
   return (
     <nav className="bg-background/70 sticky top-0 z-10 border-b border-b-[#1C1F26] backdrop-blur-2xl">
@@ -44,7 +46,7 @@ export default function Navbar() {
               Plan
             </span>
             <span className="bg-primary flex h-5 min-w-5 items-center justify-center rounded-full px-1.25 text-xs font-bold text-black">
-              0
+              {todaysPlans.length}
             </span>
           </Link>
 
@@ -54,7 +56,7 @@ export default function Navbar() {
             </span>
 
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-[#2D313B] px-1.25 text-xs font-medium text-[#D1D5DB]">
-              0
+              {savedPlans.length}
             </span>
           </Link>
         </div>
