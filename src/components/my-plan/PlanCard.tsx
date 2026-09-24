@@ -17,7 +17,7 @@ export default function PlanCard() {
         />
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 px-2 md:px-0">
         <h3 className="font-oswald font-bold tracking-[0.4px]">
           RUSSIAN TWIST
         </h3>
@@ -37,7 +37,7 @@ export default function PlanCard() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 px-2 pb-2 md:px-0 md:pb-0">
         <Link
           href={`/exercise/${100}`}
           className="inline-flex cursor-pointer rounded-full border border-[#374151] px-4.5 py-2 text-xs transition-transform hover:scale-105"
