@@ -1,6 +1,6 @@
 "use client";
 
-import { TabType } from "@/app/my-plan/page";
+import { TabType } from "@/contexts/ExerciseContext";
 import { Dispatch, SetStateAction } from "react";
 
 interface TabSegmentProps {
