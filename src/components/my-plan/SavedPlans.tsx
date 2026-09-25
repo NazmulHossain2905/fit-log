@@ -1,8 +1,8 @@
 import PlanCard from "./PlanCard";
 import EmptyPlan from "./EmptyPlan";
 import { useExercise } from "@/hooks/useExercise";
-import { SortType } from "@/app/my-plan/page";
 import PlanLoading from "./PlanLoading";
+import { SortType } from "@/app/my-plan/_components/MyPlanClient";
 
 interface TodaysPlansProps {
   sort: SortType;

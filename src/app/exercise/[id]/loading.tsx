@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <section className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-7 md:gap-14 md:py-12 lg:flex-row">
       {/* Image skeleton */}
-      <div className="h-100 w-full shrink-0 animate-pulse rounded-2xl border border-[#232834] bg-[#171A21] md:h-120 lg:h-183.75 lg:w-134" />
+      <div className="h-100 w-full shrink-0 animate-pulse rounded-2xl border border-[#232834] bg-[#171A21] md:h-120 lg:h-183.75 lg:w-132" />
 
       {/* Details skeleton */}
       <div className="mb-4 w-full">
