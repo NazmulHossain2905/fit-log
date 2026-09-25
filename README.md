@@ -2,9 +2,9 @@
 
 > **TRAIN WITH INTENT. LOG EVERY SET.**
 
-**Fit Log** is a dark, modern fitness companion built with Next.js and TypeScript. It helps users discover exercises, explore workout information, and build a focused workout plan.
+**Fit Log** is a dark, modern fitness companion built with **Next.js and TypeScript**. It helps users discover exercises, explore detailed workout information, and build focused workout plans.
 
-The application provides a workout library covering major muscle groups, with details such as equipment, duration, estimated calories burned, and ratings.
+The application provides a workout library covering major muscle groups, with information such as equipment, duration, estimated calories burned, difficulty, sets, reps, and ratings.
 
 ## 🌐 Live Demo
 
@@ -14,68 +14,86 @@ The application provides a workout library covering major muscle groups, with de
 
 <details>
   <summary><strong>🖼️ Project Screenshots</strong></summary>
+
 <br />
 
 <strong>Workouts</strong>
+
 <img
-    src="./public/preview/fit-log-preview-1.png"
-    alt="Workouts"
-    width="100%"
+src="./public/preview/fit-log-preview-1.png"
+alt="Fit Log Workouts"
+width="100%"
 />
+
 <br /><br />
 
 <strong>Exercise Details</strong>
+
 <img
-    src="./public/preview/fit-log-preview-2.png"
-    alt="Exercise Details"
-    width="100%"
+src="./public/preview/fit-log-preview-2.png"
+alt="Fit Log Exercise Details"
+width="100%"
 />
+
 <br /><br />
 
 <strong>Today's Plan</strong>
+
 <img
-    src="./public/preview/fit-log-preview-3.png"
-    alt="Today's Plan"
-    width="100%"
+src="./public/preview/fit-log-preview-3.png"
+alt="Fit Log Today's Plan"
+width="100%"
 />
+
 <br /><br />
 
 <strong>Saved Plan</strong>
+
 <img
-    src="./public/preview/fit-log-preview-4.png"
-    alt="Saved Plan"
-    width="100%"
+src="./public/preview/fit-log-preview-4.png"
+alt="Fit Log Saved Plan"
+width="100%"
 />
 
 </details>
 
 ## ✨ Features
 
-- 🏋️ **Workout Library** — Browse exercises covering major muscle groups.
-- 🔎 **Exercise Details** — Open individual exercises to explore their information.
-- 💪 **Muscle Group Tags** — Quickly identify the muscle groups targeted by each exercise.
-- 🧰 **Equipment Information** — See the equipment required for each workout.
+- 🏋️ **Workout Library** — Browse a library of exercises covering major muscle groups.
+- 🔎 **Exercise Details** — View detailed information for individual exercises.
+- 💪 **Muscle Group Tags** — Identify the primary muscle groups targeted by each exercise.
+- 🧰 **Equipment Information** — See the equipment required for each exercise.
+- 📊 **Difficulty Information** — View the difficulty level of each exercise.
 - ⏱️ **Workout Duration** — View the estimated duration of each exercise.
-- 🔥 **Calories Information** — See the estimated calories burned.
-- ⭐ **Exercise Ratings** — View the rating for each workout.
-- 📋 **Workout Planning** — Pick exercises and organize your workout plan.
-- 🌙 **Dark Interface** — Focused dark-themed gym interface.
-- 📱 **Responsive UI** — Designed for different screen sizes.
+- 🔥 **Calories Information** — See the estimated calories burned for each exercise.
+- ⭐ **Exercise Ratings** — View ratings for individual exercises.
+- 🔍 **Filter & Sort** — Filter and sort exercises using relevant criteria.
+- 📋 **Workout Planning** — Add exercises to today's workout and organize your plan.
+- 🔖 **Save Exercises** — Save exercises for later access.
+- ✅ **Workout Tracking** — Mark planned exercises as completed.
+- 📈 **Workout Statistics** — View statistics related to your workout activity.
+- 💾 **Persistent Data** — Preserve workout plans and saved exercises using browser local storage.
+- 🌙 **Dark Interface** — Focused dark-themed interface designed for a modern fitness experience.
+- 📱 **Responsive Design** — Optimized for mobile, tablet, and desktop screens.
+- 💀 **Loading Skeletons** — Display skeleton placeholders during loading states.
+- 🚫 **Custom 404 Page** — Provide a dedicated page for invalid or unavailable routes.
+- 🏷️ **Dynamic Metadata** — Generate metadata for individual exercise pages.
 
-The exercise library currently contains twelve exercises covering major muscle groups.
+The exercise library currently contains **12 exercises** covering major muscle groups.
 
 ## 🛠️ Tech Stack
 
-- **Next.js 16** — React framework
+- **Next.js 16** — React framework and application framework
 - **React 19** — UI library
 - **TypeScript** — Type-safe development
-- **Tailwind CSS 4** — Styling
-- **React Icons** — Icons
+- **Tailwind CSS 4** — Utility-first styling
+- **React Icons** — Icon library
 - **React Toastify** — Toast notifications
+- **Context API** — Client-side workout plan state management
+- **Local Storage** — Persistent client-side data
+- **REST API** — Exercise data source
 - **ESLint** — Code linting
 - **Prettier** — Code formatting
-
-These technologies and versions are based on the project's current `package.json`.
 
 ## 📦 Dependencies
 
@@ -110,13 +128,13 @@ These technologies and versions are based on the project's current `package.json
 
 ## 🔌 API
 
-Fit Log fetches exercise data from the project's API endpoint:
+Fit Log fetches exercise data from the project's REST API:
 
 ```text
 http://api.abcz.workers.dev/api/fitlog
 ```
 
-Individual exercise data can be requested using:
+Individual exercises can be requested using their ID:
 
 ```text
 http://api.abcz.workers.dev/api/fitlog/{id}
@@ -126,14 +144,14 @@ The exercise library fetches its data from this API on the server side.
 
 ## 📋 Prerequisites
 
-Before running the project locally, make sure you have:
+Before running Fit Log locally, make sure you have the following installed:
 
 - **Node.js**
 - **npm**
 - **Git**
 - A modern web browser
 
-Check your installed versions:
+You can check your installed versions with:
 
 ```bash
 node --version
@@ -216,34 +234,70 @@ The API endpoint is currently defined directly in the application code, so you d
 
 ```text
 fit-log/
-│
 ├── .vscode/
 │
 ├── public/
-│   └── assets/
-│       └── ...
+│   ├── assets/
+│   │   └── ...
+│   └── preview/
+│       ├── fit-log-preview-1.png
+│       ├── fit-log-preview-2.png
+│       ├── fit-log-preview-3.png
+│       └── fit-log-preview-4.png
 │
 ├── src/
+│   ├── apis/
+│   │   └── exercise.ts
+│   │
 │   ├── app/
 │   │   ├── exercise/
 │   │   │   └── [id]/
+│   │   │       ├── loading.tsx
 │   │   │       └── page.tsx
 │   │   │
-│   │   ├── favicon.ico
+│   │   ├── my-plan/
+│   │   │   ├── _components/
+│   │   │   │   └── MyPlanClient.tsx
+│   │   │   ├── loading.tsx
+│   │   │   └── page.tsx
+│   │   │
 │   │   ├── globals.css
+│   │   ├── icon.png
 │   │   ├── layout.tsx
+│   │   ├── not-found.tsx
 │   │   └── page.tsx
 │   │
 │   ├── components/
 │   │   ├── exercise/
+│   │   │   ├── [id]/
+│   │   │   │   └── AddAndSaveButtons.tsx
 │   │   │   ├── ExerciseCard.tsx
-│   │   │   └── ExerciseGrid.tsx
+│   │   │   ├── ExerciseGrid.tsx
+│   │   │   ├── ExerciseLibrary.tsx
+│   │   │   ├── ExerciseLoading.tsx
+│   │   │   └── Hero.tsx
 │   │   │
-│   │   ├── Hero.tsx
-│   │   └── ...
+│   │   ├── my-plan/
+│   │   │   ├── EmptyPlan.tsx
+│   │   │   ├── ExercisesStats.tsx
+│   │   │   ├── PlanCard.tsx
+│   │   │   ├── PlanLoading.tsx
+│   │   │   ├── SavedPlans.tsx
+│   │   │   ├── TabSegment.tsx
+│   │   │   └── TodaysPlans.tsx
+│   │   │
+│   │   ├── Footer.tsx
+│   │   ├── Navbar.tsx
+│   │   └── SelectDropdown.tsx
+│   │
+│   ├── contexts/
+│   │   └── ExerciseContext.tsx
+│   │
+│   ├── hooks/
+│   │   └── useExercise.ts
 │   │
 │   └── interfaces/
-│       └── ...
+│       └── IExercise.ts
 │
 ├── .gitignore
 ├── .prettierrc
@@ -256,27 +310,42 @@ fit-log/
 └── README.md
 ```
 
-The main homepage uses a `Hero` component and an `ExerciseGrid` component. The exercise grid fetches the workout data and renders each exercise through an `ExerciseCard`.
+### Main Application Flow
+
+The homepage uses the `Hero`, `ExerciseLibrary`, and `ExerciseGrid` components to present the workout library.
+
+Exercises are fetched from the REST API and rendered through individual `ExerciseCard` components.
+
+Individual exercises are accessible through dynamic routes:
+
+```text
+/exercise/[id]
+```
+
+The `My Plan` section manages today's workout plan and saved exercises using client-side state and local storage.
 
 ## 🏋️ Exercise Information
 
-Each exercise card provides information including:
+Each exercise provides information such as:
 
 - Exercise name
 - Target muscle groups
 - Equipment
+- Difficulty
 - Duration
 - Estimated calories burned
+- Sets
+- Reps
 - Rating
 - Exercise image
 
-Each card links to an individual exercise route using its exercise ID.
+Each exercise card links to its corresponding exercise details page using the exercise ID.
 
 ## 🏋️ Workout Library
 
-The current application provides a collection of workouts across major muscle groups, including:
+The current application provides the following 12 exercises:
 
-| Workout               | Muscle Group         | Equipment      |
+| Exercise              | Muscle Group         | Equipment      |
 | --------------------- | -------------------- | -------------- |
 | Barbell Bench Press   | Chest, Arms          | Barbell, Bench |
 | Pull-Up               | Back, Arms           | Pull-up Bar    |
@@ -291,7 +360,57 @@ The current application provides a collection of workouts across major muscle gr
 | Russian Twist         | Core                 | Medicine Ball  |
 | Kettlebell Swing      | Full Body, Shoulders | Kettlebell     |
 
-The live application currently displays these 12 workouts in its library.
+## 📋 My Plan
+
+The **My Plan** section allows users to manage their selected exercises.
+
+Users can:
+
+- Add exercises to today's workout plan
+- Save exercises for later
+- Mark exercises as completed
+- Remove exercises from their plans
+- View workout statistics
+- Sort exercises by duration, rating, or calories
+- Switch between today's plan and saved exercises
+
+Workout plans and saved exercises are stored in **localStorage**, allowing them to remain available after refreshing or reopening the browser.
+
+## 📱 Responsive Design
+
+Fit Log is designed to work across:
+
+- 📱 Mobile
+- 📱 Tablet
+- 💻 Desktop
+
+The interface adapts its layout, spacing, typography, and exercise cards based on the screen size.
+
+## 🎨 Design
+
+Fit Log uses a dark, fitness-focused interface with:
+
+- Dark backgrounds
+- High-contrast typography
+- Rounded cards
+- Minimal borders
+- Responsive layouts
+- Skeleton loading states
+- Clear workout-focused visual hierarchy
+
+## 🔮 Future Improvements
+
+Potential future improvements include:
+
+- User authentication
+- Cloud-synced workout plans
+- Workout history
+- Long-term progress tracking
+- Custom workout creation
+- Exercise search
+- More advanced filtering
+- Personal fitness goals
+- Workout reminders
 
 ## 🔗 Useful Links
 
@@ -308,9 +427,11 @@ The live application currently displays these 12 workouts in its library.
 
 **Nazmul Hossain**
 
-- GitHub: https://github.com/NazmulHossain2905
-- Repository: https://github.com/NazmulHossain2905/fit-log
+- GitHub: [@NazmulHossain2905](https://github.com/NazmulHossain2905)
+- Repository: [Fit Log](https://github.com/NazmulHossain2905/fit-log)
 
 ---
 
 Built with ❤️ using **Next.js, React, TypeScript & Tailwind CSS**.
+
+⭐ If you find this project useful, consider giving the repository a star.
