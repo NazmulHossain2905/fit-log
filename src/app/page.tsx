@@ -1,11 +1,11 @@
-import ExerciseGrid from "@/components/exercise/ExerciseGrid";
+import ExerciseLibrary from "@/components/exercise/ExerciseLibrary";
 import Hero from "@/components/exercise/Hero";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ExerciseGrid />
+      <ExerciseLibrary />
     </>
   );
 }

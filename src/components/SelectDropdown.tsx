@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface IOption {
   value: string;
@@ -38,7 +38,7 @@ export default function SelectDropdown({
         className="flex w-full items-center justify-between gap-2 rounded-lg border border-[#232732] bg-[#13161D] px-3 py-2 text-xs text-white"
       >
         {selectedOption?.label}
-        <IoIosArrowDown />
+        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </button>
 
       {isOpen && (

@@ -2,13 +2,14 @@ import PlanCard from "./PlanCard";
 import EmptyPlan from "./EmptyPlan";
 import { useExercise } from "@/hooks/useExercise";
 import { SortType } from "@/app/my-plan/page";
+import PlanLoading from "./PlanLoading";
 
 interface TodaysPlansProps {
   sort: SortType;
 }
 
 export default function SavedPlans({ sort }: TodaysPlansProps) {
-  const { savedPlans } = useExercise();
+  const { savedPlans, loading } = useExercise();
 
   const sortedPlans = [...savedPlans];
 
@@ -25,6 +26,10 @@ export default function SavedPlans({ sort }: TodaysPlansProps) {
       sortedPlans.sort((a, b) => b.rating - a.rating);
       break;
     }
+  }
+
+  if (loading) {
+    return <PlanLoading />;
   }
 
   return savedPlans.length > 0 ? (

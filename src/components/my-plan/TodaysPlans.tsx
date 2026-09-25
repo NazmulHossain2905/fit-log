@@ -3,14 +3,15 @@
 import { useExercise } from "@/hooks/useExercise";
 import PlanCard from "./PlanCard";
 import EmptyPlan from "./EmptyPlan";
-import { SortType } from "@/app/my-plan/page";
+import PlanLoading from "./PlanLoading";
+import { SortType } from "@/app/my-plan/_components/MyPlanClient";
 
 interface TodaysPlansProps {
   sort: SortType;
 }
 
 export default function TodaysPlans({ sort }: TodaysPlansProps) {
-  const { todaysPlans } = useExercise();
+  const { todaysPlans, loading } = useExercise();
 
   const sortedPlans = [...todaysPlans];
 
@@ -27,6 +28,10 @@ export default function TodaysPlans({ sort }: TodaysPlansProps) {
       sortedPlans.sort((a, b) => b.rating - a.rating);
       break;
     }
+  }
+
+  if (loading) {
+    return <PlanLoading />;
   }
 
   return todaysPlans.length > 0 ? (
