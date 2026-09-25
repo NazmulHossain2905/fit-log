@@ -42,12 +42,12 @@ export default function AddAndSaveButtons({
       <button
         type="button"
         onClick={handleTodaysPlan}
-        disabled={isInTodaysPlans}
+        disabled={isInTodaysPlans || todaysPlans.length >= 5}
         className="bg-primary inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-black shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] transition-transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-40 md:w-auto"
       >
         <LuCalendarPlus2 />
         <span>
-          {isInTodaysPlans ? "In today's plan ✓" : "Add to today's plan"}
+          {isInTodaysPlans ? "In today's plan" : "Add to today's plan"}
         </span>
       </button>
       <button
@@ -57,7 +57,7 @@ export default function AddAndSaveButtons({
         className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-[#374151] px-6 py-3 text-sm font-semibold text-[#E5E7EB] transition-transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-40 md:w-auto"
       >
         <FaRegBookmark />
-        <span>{isInSavedPlans ? "Saved ✓" : "Save for later"}</span>
+        <span>{isInSavedPlans ? "Saved" : "Save for later"}</span>
       </button>
     </div>
   );
